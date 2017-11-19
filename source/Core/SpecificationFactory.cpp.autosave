@@ -1,0 +1,12 @@
+#include "SpecificationFactory.h"
+#include "Models/Specifications/IntegerSpecificationModel.h"
+
+QMap<QString, FactoryMemberFunction> SpecificationFactory::factoryMap =
+{
+	{ IntegerSpecificationModel::TYPENAME, &SpecificationFactory::CreateIntegerSpecification }
+};
+
+Specification* CreateIntegerSpecification() const
+{
+	return 
+}
