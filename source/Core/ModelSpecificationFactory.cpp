@@ -1,12 +1,15 @@
 #include "ModelSpecificationFactory.h"
-#include "Models/Specifications/IntegerSpecificationModel.h"
-#include "Models/Specifications/DecimalSpecificationModel.h"
+#include "source/Models/Specifications/IntegerSpecificationModel.h"
+#include "source/Models/Specifications/DecimalSpecificationModel.h"
+#include "source/Models/Specifications/StringSpecificationModel.h"
+
 
 ModelSpecificationFactory::ModelSpecificationFactory()
 	: factoryMap
 	  {
 		{ IntegerSpecificationModel::TYPENAME, &ModelSpecificationFactory::CreateIntegerModel },
-		{ DecimalSpecificationModel::TYPENAME, &ModelSpecificationFactory::CreateDecimalModel }
+		{ DecimalSpecificationModel::TYPENAME, &ModelSpecificationFactory::CreateDecimalModel },
+		{ StringSpecificationModel::TYPENAME, &ModelSpecificationFactory::CreateStringModel }
 	  }
 {
 
@@ -25,5 +28,11 @@ SpecificationModel* ModelSpecificationFactory::CreateIntegerModel() const
 
 SpecificationModel* ModelSpecificationFactory::CreateDecimalModel() const
 {
-	return new DecimalSpecificationModel(0, 0);
+	return new DecimalSpecificationModel(0.0, 0.0);
 }
+
+SpecificationModel* ModelSpecificationFactory::CreateStringModel() const
+{
+	return new StringSpecificationModel("", "");
+}
+

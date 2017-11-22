@@ -1,6 +1,8 @@
 #include "DataBase.h"
-#include "Core/Specification.h"
-#include "Models/Specifications/IntegerSpecificationModel.h"
+#include "source/Core/Specification.h"
+#include "source/Models/Specifications/IntegerSpecificationModel.h"
+#include "source/Models/Specifications/DecimalSpecificationModel.h"
+#include "source/Models/Specifications/StringSpecificationModel.h"
 
 
 DataBase::DataBase() : nextSpecificationIdAvailable(0U)
@@ -15,11 +17,9 @@ void DataBase::Init()
 
 void DataBase::RegisterDefaultSpecifications()
 {
-	defaultSpecifications.Insert
-	(
-		IntegerSpecificationModel::TYPENAME,
-		*(new Specification(nextSpecificationIdAvailable++, IntegerSpecificationModel::TYPENAME, IntegerSpecificationModel::TYPENAME))
-	);
+	RegisterDefaultType<IntegerSpecificationModel>();
+	RegisterDefaultType<DecimalSpecificationModel>();
+	RegisterDefaultType<StringSpecificationModel>();
 }
 
 bool DataBase::InsertSpecification(Specification& spec)

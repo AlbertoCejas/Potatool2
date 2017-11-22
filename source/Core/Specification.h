@@ -3,7 +3,7 @@
 
 #include <QString>
 #include <QtGlobal>
-#include "Core/ModelSpecificationFactory.h"
+#include "source/Core/ModelSpecificationFactory.h"
 
 class SpecificationModel;
 

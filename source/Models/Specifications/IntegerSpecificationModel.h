@@ -2,7 +2,7 @@
 #define INTEGERSPECIFICATIONMODEL_H
 
 #include <QString>
-#include "Models/Specifications/BaseNumericalSpecificationModel.h"
+#include "source/Models/Specifications/BaseNumericalSpecificationModel.h"
 
 class IntegerSpecificationModel : public BaseNumericalSpecificationModel<int>
 {
@@ -11,6 +11,7 @@ class IntegerSpecificationModel : public BaseNumericalSpecificationModel<int>
 		static QString TYPENAME;
 
 		explicit IntegerSpecificationModel(int value, int defaultValue);
+		explicit IntegerSpecificationModel(int minValue, int value, int maxValue, int defaultValue);
 };
 
 #endif // INTEGERSPECIFICATIONMODEL_H

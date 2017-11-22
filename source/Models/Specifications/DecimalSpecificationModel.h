@@ -2,7 +2,7 @@
 #define DECIMALSPECIFICATIONMODEL_H
 
 #include <QString>
-#include "Models/Specifications/BaseNumericalSpecificationModel.h"
+#include "source/Models/Specifications/BaseNumericalSpecificationModel.h"
 
 class DecimalSpecificationModel: public BaseNumericalSpecificationModel<double>
 {
@@ -11,6 +11,7 @@ class DecimalSpecificationModel: public BaseNumericalSpecificationModel<double>
 		static QString TYPENAME;
 
 		explicit DecimalSpecificationModel(double value, double defaultValue);
+		explicit DecimalSpecificationModel(double minValue, double value, double maxValue, double defaultValue);
 };
 
 #endif // DECIMALSPECIFICATIONMODEL_H

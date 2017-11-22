@@ -25,17 +25,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         source/main.cpp \
-        source/Potatool.cpp \
     source/Core/Specification.cpp \
     source/Core/SpecificationModel.cpp \
     source/Models/Specifications/IntegerSpecificationModel.cpp \
     source/Core/DataBase.cpp \
     source/Models/Specifications/DecimalSpecificationModel.cpp \
     source/Models/Specifications/BaseNumericalSpecificationModel.cpp \
-    source/Core/ModelSpecificationFactory.cpp
+    source/Core/ModelSpecificationFactory.cpp \
+    source/PotatoolWindow.cpp \
+    source/Core/Potatool2.cpp \
+    source/Models/Specifications/StringSpecificationModel.cpp \
+    source/Core/DataBase.cpp \
+    source/Core/ModelSpecificationFactory.cpp \
+    source/Core/Potatool2.cpp \
+    source/Core/Specification.cpp \
+    source/Core/SpecificationModel.cpp \
+    source/Models/Specifications/BaseNumericalSpecificationModel.cpp \
+    source/Models/Specifications/DecimalSpecificationModel.cpp \
+    source/Models/Specifications/IntegerSpecificationModel.cpp \
+    source/Models/Specifications/StringSpecificationModel.cpp \
+    source/main.cpp \
+    source/PotatoolWindow.cpp
 
 HEADERS += \
-        source/Potatool.h \
     source/Core/Specification.h \
     source/Core/SpecificationModel.h \
     source/Models/Specifications/IntegerSpecificationModel.h \
@@ -43,7 +55,21 @@ HEADERS += \
     source/Core/DataBaseCollection.h \
     source/Models/Specifications/DecimalSpecificationModel.h \
     source/Models/Specifications/BaseNumericalSpecificationModel.h \
-    source/Core/ModelSpecificationFactory.h
+    source/Core/ModelSpecificationFactory.h \
+    source/PotatoolWindow.h \
+    source/Core/Potatool2.h \
+    source/Models/Specifications/StringSpecificationModel.h \
+    source/Core/DataBase.h \
+    source/Core/DataBaseCollection.h \
+    source/Core/ModelSpecificationFactory.h \
+    source/Core/Potatool2.h \
+    source/Core/Specification.h \
+    source/Core/SpecificationModel.h \
+    source/Models/Specifications/BaseNumericalSpecificationModel.h \
+    source/Models/Specifications/DecimalSpecificationModel.h \
+    source/Models/Specifications/IntegerSpecificationModel.h \
+    source/Models/Specifications/StringSpecificationModel.h \
+    source/PotatoolWindow.h
 
 FORMS += \
     ui/potatool.ui
