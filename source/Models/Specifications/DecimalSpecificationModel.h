@@ -8,7 +8,8 @@ class DecimalSpecificationModel: public BaseNumericalSpecificationModel<double>
 {
 	public:
 
-		static QString TYPENAME;
+        static const QString TYPENAME;
+        static const double DEFAULT_VALUE;
 
 		explicit DecimalSpecificationModel(double value, double defaultValue);
 		explicit DecimalSpecificationModel(double minValue, double value, double maxValue, double defaultValue);

@@ -5,34 +5,15 @@
 
 
 ModelSpecificationFactory::ModelSpecificationFactory()
-	: factoryMap
-	  {
-		{ IntegerSpecificationModel::TYPENAME, &ModelSpecificationFactory::CreateIntegerModel },
-		{ DecimalSpecificationModel::TYPENAME, &ModelSpecificationFactory::CreateDecimalModel },
-		{ StringSpecificationModel::TYPENAME, &ModelSpecificationFactory::CreateStringModel }
-	  }
 {
-
+    AddType<IntegerSpecificationModel>(IntegerSpecificationModel::TYPENAME);
+    AddType<StringSpecificationModel>(StringSpecificationModel::TYPENAME);
+    AddType<DecimalSpecificationModel>(DecimalSpecificationModel::TYPENAME);
 }
 
 SpecificationModel* ModelSpecificationFactory::CreateModel(const QString& modelName) const
 {
-	FactoryFunction function = factoryMap[modelName];
+    ConstructorFunctionPtr function = factoryMap[modelName];
 	return (this->*function)();
-}
-
-SpecificationModel* ModelSpecificationFactory::CreateIntegerModel() const
-{
-	return new IntegerSpecificationModel(0, 0);
-}
-
-SpecificationModel* ModelSpecificationFactory::CreateDecimalModel() const
-{
-	return new DecimalSpecificationModel(0.0, 0.0);
-}
-
-SpecificationModel* ModelSpecificationFactory::CreateStringModel() const
-{
-	return new StringSpecificationModel("", "");
 }
 

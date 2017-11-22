@@ -11,27 +11,34 @@ class ModelSpecificationFactory
 	public:
 
 		explicit ModelSpecificationFactory();
+
 		SpecificationModel* CreateModel(const QString& modelName) const;
 
-		template <typename T>
-		SpecificationModel* CreateModel(const QString& modelName) const;
+        template<typename Type>
+        void AddType(const QString& typeName);
 
 	private:
 
-		typedef SpecificationModel* (ModelSpecificationFactory::*FactoryFunction)() const;
+        typedef SpecificationModel* (ModelSpecificationFactory::*ConstructorFunctionPtr)() const;
 
-		SpecificationModel* CreateIntegerModel() const;
-		SpecificationModel* CreateDecimalModel() const;
-		SpecificationModel* CreateStringModel() const;
+        template<typename Type>
+        SpecificationModel* CreateType() const;
 
 
-		QMap<QString, FactoryFunction> factoryMap;
+        QMap<QString, ConstructorFunctionPtr> factoryMap;
 };
 
-template <typename T>
-SpecificationModel* ModelSpecificationFactory::CreateModel() const
+template<typename Type>
+void ModelSpecificationFactory::AddType(const QString& typeName)
 {
-	return new T(T::DEFAULT_VALUE, T::DEFAULT_VALUE);
+    ConstructorFunctionPtr function = &CreateType<Type>;
+    factoryMap.insert(typeName, function);
+}
+
+template<typename Type>
+SpecificationModel* ModelSpecificationFactory::CreateType() const
+{
+    return new Type(Type::DEFAULT_VALUE, Type::DEFAULT_VALUE);
 }
 
 #endif // SPECIFICATIONFACTORY_H

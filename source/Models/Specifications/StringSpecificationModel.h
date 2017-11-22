@@ -8,7 +8,8 @@ class StringSpecificationModel : public SpecificationModel
 {
 	public:
 
-		static QString TYPENAME;
+        static const QString TYPENAME;
+        static const QString DEFAULT_VALUE;
 
 		explicit StringSpecificationModel(QString value, QString defaultValue) : value(value), defaultValue(defaultValue) { }
 

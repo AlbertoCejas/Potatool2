@@ -1,3 +1,4 @@
 #include "StringSpecificationModel.h"
 
-QString StringSpecificationModel::TYPENAME = "STRING";
+const QString StringSpecificationModel::TYPENAME = "STRING";
+const QString StringSpecificationModel::DEFAULT_VALUE = "";
