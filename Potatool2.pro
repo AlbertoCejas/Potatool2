@@ -34,7 +34,19 @@ SOURCES += \
     source/Core/ModelSpecificationFactory.cpp \
     source/PotatoolWindow.cpp \
     source/Core/Potatool2.cpp \
-    source/Models/Specifications/StringSpecificationModel.cpp
+    source/Models/Specifications/StringSpecificationModel.cpp \
+    source/Core/DataBase.cpp \
+    source/Core/ModelSpecificationFactory.cpp \
+    source/Core/Potatool2.cpp \
+    source/Core/Specification.cpp \
+    source/Core/SpecificationModel.cpp \
+    source/Models/Specifications/BaseNumericalSpecificationModel.cpp \
+    source/Models/Specifications/DecimalSpecificationModel.cpp \
+    source/Models/Specifications/IntegerSpecificationModel.cpp \
+    source/Models/Specifications/StringSpecificationModel.cpp \
+    source/main.cpp \
+    source/PotatoolWindow.cpp \
+    source/Controllers/SpecificationController.cpp
 
 HEADERS += \
     source/Core/Specification.h \
@@ -47,7 +59,19 @@ HEADERS += \
     source/Core/ModelSpecificationFactory.h \
     source/PotatoolWindow.h \
     source/Core/Potatool2.h \
-    source/Models/Specifications/StringSpecificationModel.h
+    source/Models/Specifications/StringSpecificationModel.h \
+    source/Core/DataBase.h \
+    source/Core/DataBaseCollection.h \
+    source/Core/ModelSpecificationFactory.h \
+    source/Core/Potatool2.h \
+    source/Core/Specification.h \
+    source/Core/SpecificationModel.h \
+    source/Models/Specifications/BaseNumericalSpecificationModel.h \
+    source/Models/Specifications/DecimalSpecificationModel.h \
+    source/Models/Specifications/IntegerSpecificationModel.h \
+    source/Models/Specifications/StringSpecificationModel.h \
+    source/PotatoolWindow.h \
+    source/Controllers/SpecificationController.h
 
 FORMS += \
     ui/potatool.ui

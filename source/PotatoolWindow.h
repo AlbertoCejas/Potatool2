@@ -18,7 +18,11 @@ class Potatool2Window : public QMainWindow
 
 		void Init();
 
+		inline void SetPotatoolInstance(Potatool2* potatoolInstance) { this->potatoolInstance = potatoolInstance; }
+
 	private:
+
+		Potatool2* potatoolInstance;
 
 		Ui::Potatool2 *ui;
 };
