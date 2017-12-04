@@ -14,8 +14,8 @@ class ModelSpecificationFactory
 
 		SpecificationModel* CreateModel(const QString& modelName) const;
 
-        template<typename Type>
-        void AddType(const QString& typeName);
+		template<typename Type>
+		void AddType();
 
 	private:
 
@@ -29,10 +29,10 @@ class ModelSpecificationFactory
 };
 
 template<typename Type>
-void ModelSpecificationFactory::AddType(const QString& typeName)
+void ModelSpecificationFactory::AddType()
 {
     ConstructorFunctionPtr function = &CreateType<Type>;
-    factoryMap.insert(typeName, function);
+	factoryMap.insert(Type::TYPENAME, function);
 }
 
 template<typename Type>

@@ -6,9 +6,9 @@
 
 ModelSpecificationFactory::ModelSpecificationFactory()
 {
-    AddType<IntegerSpecificationModel>(IntegerSpecificationModel::TYPENAME);
-    AddType<StringSpecificationModel>(StringSpecificationModel::TYPENAME);
-    AddType<DecimalSpecificationModel>(DecimalSpecificationModel::TYPENAME);
+	AddType<IntegerSpecificationModel>();
+	AddType<StringSpecificationModel>();
+	AddType<DecimalSpecificationModel>();
 }
 
 SpecificationModel* ModelSpecificationFactory::CreateModel(const QString& modelName) const
