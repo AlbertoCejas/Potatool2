@@ -2,7 +2,6 @@
 #define POTATOOLWINDOW_H
 
 #include <QMainWindow>
-#include <QUndoStack>
 
 namespace Ui
 {
@@ -24,8 +23,6 @@ class Potatool2Window : public QMainWindow
 	private:
 
 		Potatool2* potatoolInstance;
-
-		QUndoStack* undoStack;
 
 		Ui::Potatool2 *ui;
 };
