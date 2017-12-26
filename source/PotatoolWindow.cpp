@@ -3,7 +3,7 @@
 
 Potatool2Window::Potatool2Window(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::Potatool2)
+    ui(new Ui::Potatool2UI)
 {
     ui->setupUi(this);
 }

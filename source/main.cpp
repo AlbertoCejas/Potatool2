@@ -1,4 +1,6 @@
 #include "PotatoolWindow.h"
+#include "source/Core/Potatool2.h"
+#include "source/PotatoolWindow.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -10,7 +12,7 @@ int main(int argc, char *argv[])
     Potatool2Window potatoolWindow;
     potatoolWindow.showMaximized();
 
-	potatoolWindow.setPotatoolInstance(potatool2);
+    potatoolWindow.SetPotatoolInstance(potatool2);
 
     return application.exec();
 }

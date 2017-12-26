@@ -3,9 +3,11 @@
 
 #include <QMainWindow>
 
+class Potatool2;
+
 namespace Ui
 {
-	class Potatool2;
+    class Potatool2UI;
 }
 
 class Potatool2Window : public QMainWindow
@@ -18,13 +20,13 @@ class Potatool2Window : public QMainWindow
 
 		void Init();
 
-		inline void SetPotatoolInstance(Potatool2* potatoolInstance) { this->potatoolInstance = potatoolInstance; }
+        inline void SetPotatoolInstance(Potatool2& potatoolInstance) { this->potatoolInstance = &potatoolInstance; }
 
 	private:
 
-		Potatool2* potatoolInstance;
+        Potatool2* potatoolInstance;
 
-		Ui::Potatool2 *ui;
+        Ui::Potatool2UI *ui;
 };
 
 #endif // POTATOOLWINDOW_H
