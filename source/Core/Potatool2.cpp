@@ -2,5 +2,5 @@
 
 Potatool2::Potatool2()
 {
-	database.Init();
+
 }

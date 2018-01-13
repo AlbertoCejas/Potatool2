@@ -2,7 +2,6 @@
 #define POTATOOL2_H
 
 #include <QUndoStack>
-#include "Source/Core/DataBase.h"
 #include "source/Controllers/SpecificationController.h"
 
 class Potatool2
@@ -15,7 +14,6 @@ class Potatool2
 
         QUndoStack* undoStack;
 
-		DataBase database;
 		SpecificationController specificationController;
 };
 

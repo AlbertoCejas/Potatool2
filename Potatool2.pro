@@ -35,7 +35,8 @@ SOURCES += \
     source/PotatoolWindow.cpp \
     source/Core/Potatool2.cpp \
     source/Models/Specifications/StringSpecificationModel.cpp \
-    source/Controllers/SpecificationController.cpp
+    source/Controllers/SpecificationController.cpp \
+    source/Core/Project.cpp
 
 HEADERS += \
     source/Core/Specification.h \
@@ -49,7 +50,8 @@ HEADERS += \
     source/PotatoolWindow.h \
     source/Core/Potatool2.h \
     source/Models/Specifications/StringSpecificationModel.h \
-    source/Controllers/SpecificationController.h
+    source/Controllers/SpecificationController.h \
+    source/Core/Project.h
 
 FORMS += \
     ui/potatool.ui
