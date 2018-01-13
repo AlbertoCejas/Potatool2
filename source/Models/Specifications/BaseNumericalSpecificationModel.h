@@ -3,16 +3,17 @@
 
 #include "source/Core/SpecificationModel.h"
 #include <limits>
+#include <type_traits>
 
-template<typename T>
+template<typename T, typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
 class BaseNumericalSpecificationModel : public SpecificationModel
 {
 	public:
 
-		explicit BaseNumericalSpecificationModel(T minValue, T value, T maxValue, T defaultValue)
-			: minValue(minValue), value(value), maxValue(maxValue), defaultValue(defaultValue) { }
-		explicit BaseNumericalSpecificationModel(T value, T defaultValue)
-			: minValue(std::numeric_limits<T>::min()), value(value), maxValue(std::numeric_limits<T>::max()), defaultValue(defaultValue) { }
+		explicit BaseNumericalSpecificationModel(T minValue, T maxValue, T defaultValue)
+			: minValue(minValue), maxValue(maxValue), defaultValue(defaultValue) { }
+		explicit BaseNumericalSpecificationModel(T defaultValue)
+			: minValue(std::numeric_limits<T>::min()), maxValue(std::numeric_limits<T>::max()), defaultValue(defaultValue) { }
 
 		inline T GetMinValue() const { return this->minValue; }
 		inline void SetMinValue(T minValue) { this->minValue = minValue; }
@@ -28,7 +29,6 @@ class BaseNumericalSpecificationModel : public SpecificationModel
 	private:
 
 		T minValue;
-		T value;
 		T maxValue;
 		T defaultValue;
 

@@ -11,8 +11,8 @@ class DecimalSpecificationModel: public BaseNumericalSpecificationModel<double>
         static const QString TYPENAME;
         static const double DEFAULT_VALUE;
 
-		explicit DecimalSpecificationModel(double value, double defaultValue);
-		explicit DecimalSpecificationModel(double minValue, double value, double maxValue, double defaultValue);
+		explicit DecimalSpecificationModel(double defaultValue);
+		explicit DecimalSpecificationModel(double minValue, double maxValue, double defaultValue);
 };
 
 #endif // DECIMALSPECIFICATIONMODEL_H

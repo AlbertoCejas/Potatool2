@@ -38,7 +38,7 @@ void ModelSpecificationFactory::AddType()
 template<typename Type>
 SpecificationModel* ModelSpecificationFactory::CreateType() const
 {
-    return new Type(Type::DEFAULT_VALUE, Type::DEFAULT_VALUE);
+	return new Type(Type::DEFAULT_VALUE);
 }
 
 #endif // SPECIFICATIONFACTORY_H

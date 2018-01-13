@@ -3,6 +3,7 @@
 #include "source/Models/Specifications/IntegerSpecificationModel.h"
 #include "source/Models/Specifications/DecimalSpecificationModel.h"
 #include "source/Models/Specifications/StringSpecificationModel.h"
+#include "source/Models/Specifications/EnumerationSpecificationModel.h"
 
 
 DataBase::DataBase() : nextSpecificationIdAvailable(0U)
@@ -20,6 +21,7 @@ void DataBase::RegisterDefaultSpecifications()
 	RegisterDefaultType<IntegerSpecificationModel>();
 	RegisterDefaultType<DecimalSpecificationModel>();
 	RegisterDefaultType<StringSpecificationModel>();
+	RegisterDefaultType<EnumerationSpecificationModel>();
 }
 
 bool DataBase::InsertSpecification(Specification& spec)

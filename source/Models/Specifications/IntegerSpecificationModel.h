@@ -11,8 +11,8 @@ class IntegerSpecificationModel : public BaseNumericalSpecificationModel<int>
         static const QString TYPENAME;
         static const int DEFAULT_VALUE;
 
-		explicit IntegerSpecificationModel(int value, int defaultValue);
-		explicit IntegerSpecificationModel(int minValue, int value, int maxValue, int defaultValue);
+		explicit IntegerSpecificationModel(int defaultValue);
+		explicit IntegerSpecificationModel(int minValue, int maxValue, int defaultValue);
 };
 
 #endif // INTEGERSPECIFICATIONMODEL_H

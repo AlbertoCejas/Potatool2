@@ -36,7 +36,9 @@ SOURCES += \
     source/Core/Potatool2.cpp \
     source/Models/Specifications/StringSpecificationModel.cpp \
     source/Controllers/SpecificationController.cpp \
-    source/Core/Project.cpp
+    source/Core/Project.cpp \
+    source/Models/Specifications/EnumerationSpecificationModel.cpp \
+    source/Models/Specifications/Enumeration.cpp
 
 HEADERS += \
     source/Core/Specification.h \
@@ -51,7 +53,9 @@ HEADERS += \
     source/Core/Potatool2.h \
     source/Models/Specifications/StringSpecificationModel.h \
     source/Controllers/SpecificationController.h \
-    source/Core/Project.h
+    source/Core/Project.h \
+    source/Models/Specifications/EnumerationSpecificationModel.h \
+    source/Models/Specifications/Enumeration.h
 
 FORMS += \
     ui/potatool.ui

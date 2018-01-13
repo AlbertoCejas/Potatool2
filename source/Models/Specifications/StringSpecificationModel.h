@@ -11,16 +11,15 @@ class StringSpecificationModel : public SpecificationModel
         static const QString TYPENAME;
         static const QString DEFAULT_VALUE;
 
-		explicit StringSpecificationModel(QString value, QString defaultValue) : value(value), defaultValue(defaultValue) { }
+		explicit StringSpecificationModel(QString defaultValue) : defaultValue(defaultValue) { }
 
-		inline QString GetValue() const { return this->value; }
-		inline void SetValue(QString value) { this->value = value; }
+		inline QString GetDefaultValue() const { return this->defaultValue; }
+		inline void SetDefaultValue(QString value) { this->defaultValue = value; }
 
 		virtual SpecificationModel* Clone() override { return nullptr; }
 
 	private:
 
-		QString value;
 		QString defaultValue;
 };
 
