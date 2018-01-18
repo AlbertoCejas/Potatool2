@@ -1,8 +1,7 @@
 #ifndef PROJECT_H
 #define PROJECT_H
 
-
-#include "Source/Core/DataBase.h"
+#include "Source/Core/SpecificationDataBase.h"
 #include <QString>
 
 class Project
@@ -12,14 +11,14 @@ class Project
         explicit Project(const char* name);
 
         inline const QString& GetName() const { return name; }
-        inline DataBase const& GetDataBase() const { return database; }
+        inline SpecificationDataBase const& GetSpecificationDataBase() const { return specificationDatabase; }
 
         inline void SetName(const char* name) { this->name = name; }
 
     private:
 
         QString name;
-        DataBase database;
+        SpecificationDataBase specificationDatabase;
 
 };
 

@@ -11,7 +11,7 @@ class Enumeration
 		const char* GetEntry(unsigned int entryIndex) const;
 		unsigned int GetEntryIndex(const char* entryToQuery) const;
 
-		bool Add(const char* entry);
+		bool Add(const char* entry); // Return some kind of Optional with error string
 		bool Remove(const char* entry);
 
 	private:

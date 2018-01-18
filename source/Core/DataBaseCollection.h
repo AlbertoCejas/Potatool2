@@ -16,8 +16,10 @@ class DataBaseCollection
 
 		bool Insert(const QString& name, T& item);
 		bool Contains(const QString& name) const;
+		bool Contains(T& item) const;
 		const QVector<T*>* Get(const QString& name) const;
-		bool Remove(const QString& name, const T& item);
+		bool Remove(const QString& name, const T& item, bool free);
+		void RemoveAll();
 
 	private:
 
@@ -30,16 +32,7 @@ template<typename T>
 DataBaseCollection<T>::DataBaseCollection() { }
 
 template<typename T>
-DataBaseCollection<T>::~DataBaseCollection()
-{
-	for(auto item : items)
-	{
-		delete item;
-	}
-
-	items.clear();
-	nameItemMap.clear();
-}
+DataBaseCollection<T>::~DataBaseCollection() { }
 
 template<typename T>
 bool DataBaseCollection<T>::Insert(const QString& name, T& item)
@@ -70,6 +63,12 @@ bool DataBaseCollection<T>::Contains(const QString& name) const
 }
 
 template<typename T>
+bool DataBaseCollection<T>::Contains(T& item) const
+{
+	return items.find(&item) != items.end();
+}
+
+template<typename T>
 const QVector<T*>* DataBaseCollection<T>::Get(const QString& name) const
 {
 	auto namesIt = nameItemMap.find(name);
@@ -82,7 +81,7 @@ const QVector<T*>* DataBaseCollection<T>::Get(const QString& name) const
 }
 
 template<typename T>
-bool DataBaseCollection<T>::Remove(const QString& name, const T& item)
+bool DataBaseCollection<T>::Remove(const QString& name, const T& item, bool free)
 {
 	auto itemsIt = items.find(const_cast<T*>(&item));
 	bool exists = itemsIt != items.end();
@@ -93,10 +92,26 @@ bool DataBaseCollection<T>::Remove(const QString& name, const T& item)
 
 		auto namesIt = nameItemMap.find(name);
 		nameItemMap.erase(namesIt);
-		delete &item;
+
+		if(free)
+		{
+			delete &item;
+		}
 	}
 
 	return exists;
+}
+
+template <typename T>
+void DataBaseCollection<T>::RemoveAll()
+{
+	for(auto item : items)
+	{
+		delete item;
+	}
+
+	items.clear();
+	nameItemMap.clear();
 }
 
 

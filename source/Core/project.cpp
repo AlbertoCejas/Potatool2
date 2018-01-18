@@ -3,5 +3,5 @@
 
 Project::Project(const char* name) : name(name)
 {
-    database.Init();
+    specificationDatabase.Init();
 }
