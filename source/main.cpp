@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 
     Potatool2Window potatoolWindow;
     potatoolWindow.showMaximized();
-
     potatoolWindow.SetPotatoolInstance(potatool2);
 
     return application.exec();

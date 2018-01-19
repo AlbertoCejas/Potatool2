@@ -18,8 +18,10 @@ class DataBase
 
 		bool Insert(const QString& type, const QString& name, T& item);
 		bool Contains(const QString& name) const;
+		bool Contains(const T& item) const;
 		const QVector<T*>* Get(const QString& name) const;
 		bool Remove(const QString& type, const QString& name, const T& item);
+		void RemoveAll();
 
 	protected:
 
@@ -38,7 +40,7 @@ DataBase<T>::DataBase() : nextIdAvailable(0U) { }
 template <typename T>
 DataBase<T>::~DataBase()
 {
-	allItems.RemoveAll();
+	this->RemoveAll();
 }
 
 template <typename T>
@@ -67,6 +69,12 @@ bool DataBase<T>::Contains(const QString& name) const
 }
 
 template <typename T>
+bool DataBase<T>::Contains(const T& item) const
+{
+	return allItems.Contains(item);
+}
+
+template <typename T>
 const QVector<T*>* DataBase<T>::Get(const QString& name) const
 {
 	return allItems.Get(name);
@@ -82,6 +90,13 @@ bool DataBase<T>::Remove(const QString& type, const QString& name, const T& item
 
 	auto it = typeCollectionMap.find(type);
 	return it->Remove(name, item, false) && allItems.Remove(name, item, true);
+}
+
+template <typename T>
+void DataBase<T>::RemoveAll()
+{
+	allItems.RemoveAll();
+	typeCollectionMap.clear();
 }
 
 

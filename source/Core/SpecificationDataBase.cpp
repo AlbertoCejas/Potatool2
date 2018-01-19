@@ -20,8 +20,8 @@ void SpecificationDataBase::Init()
 
 void SpecificationDataBase::RegisterDefaultSpecifications()
 {
-	//RegisterDefaultType<IntegerSpecificationModel>();
-	//RegisterDefaultType<DecimalSpecificationModel>();
+	RegisterDefaultType<IntegerSpecificationModel>();
+	RegisterDefaultType<DecimalSpecificationModel>();
 	RegisterDefaultType<StringSpecificationModel>();
-	//RegisterDefaultType<EnumerationSpecificationModel>();
+	RegisterDefaultType<EnumerationSpecificationModel>();
 }
