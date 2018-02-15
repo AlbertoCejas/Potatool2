@@ -6,13 +6,13 @@
 #include <QMap>
 #include "source/Core/DataBaseCollection.h"
 
-template <typename T>
-class DataBase
+/*
+class SpecificationDataBase
 {
 	public:
 
-		explicit DataBase();
-		virtual ~DataBase();
+		explicit SpecificationDataBase();
+		virtual ~SpecificationDataBase();
 
 		virtual void Init() = 0;
 
@@ -30,21 +30,22 @@ class DataBase
 	private:
 
 		ulong nextIdAvailable;
-		DataBaseCollection<T> allItems;
-		QMap<QString, DataBaseCollection<T>> typeCollectionMap;
+
+		QSet<T*> allItems;
+		QMap<QString, QVector<T*>> nameItemMap;
 };
 
 template <typename T>
-DataBase<T>::DataBase() : nextIdAvailable(0U) { }
+SpecificationDataBase<T>::SpecificationDataBase() : nextIdAvailable(0U) { }
 
 template <typename T>
-DataBase<T>::~DataBase()
+SpecificationDataBase<T>::~SpecificationDataBase()
 {
 	this->RemoveAll();
 }
 
 template <typename T>
-bool DataBase<T>::Insert(const QString& type, const QString& name, T& item)
+bool SpecificationDataBase<T>::Insert(const QString& type, const QString& name, T& item)
 {
 	if(allItems.Contains(item))
 	{
@@ -63,13 +64,13 @@ bool DataBase<T>::Insert(const QString& type, const QString& name, T& item)
 }
 
 template <typename T>
-bool DataBase<T>::Contains(const QString& name) const
+bool SpecificationDataBase<T>::Contains(const QString& name) const
 {
 	return allItems.Contains(name);
 }
 
 template <typename T>
-bool DataBase<T>::Contains(const T& item) const
+bool SpecificationDataBase<T>::Contains(const T& item) const
 {
 	return allItems.Contains(item);
 }
@@ -81,7 +82,7 @@ const QVector<T*>* DataBase<T>::Get(const QString& name) const
 }
 
 template <typename T>
-bool DataBase<T>::Remove(const QString& type, const QString& name, const T& item)
+bool SpecificationDataBase<T>::Remove(const QString& type, const QString& name, const T& item)
 {
 	if(!allItems.Contains(item))
 	{
@@ -93,11 +94,11 @@ bool DataBase<T>::Remove(const QString& type, const QString& name, const T& item
 }
 
 template <typename T>
-void DataBase<T>::RemoveAll()
+void SpecificationDataBase<T>::RemoveAll()
 {
 	allItems.RemoveAll();
 	typeCollectionMap.clear();
 }
 
-
+*/
 #endif // DATABASE_H

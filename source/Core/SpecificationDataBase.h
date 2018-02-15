@@ -5,6 +5,7 @@
 #include "source/Core/Specification.h"
 #include <QString>
 
+/*
 class SpecificationDataBase : public DataBase<Specification>
 {
 	public:
@@ -29,5 +30,6 @@ void SpecificationDataBase::RegisterDefaultType()
 {
 	this->Insert(SpecificationDataBase::DEFAULT_TYPE, TYPE::TYPENAME, *(new Specification(GetNextAvailableIdAndIncrement(), TYPE::TYPENAME, TYPE::TYPENAME)));
 }
+*/
 
 #endif // SPECIFICATIONDATABASE_H

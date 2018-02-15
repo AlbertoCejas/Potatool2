@@ -57,7 +57,9 @@ HEADERS += \
     source/Core/Project.h \
     source/Models/Specifications/EnumerationSpecificationModel.h \
     source/Models/Specifications/Enumeration.h \
-    source/Core/SpecificationDataBase.h
+    source/Core/SpecificationDataBase.h \
+    source/Core/ECS/Entity.h \
+    source/Core/DefinitionsDataBase.h
 
 FORMS += \
     ui/potatool.ui

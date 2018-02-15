@@ -5,7 +5,7 @@
 #include <QMap>
 #include <QSet>
 #include <QVector>
-
+/*
 template<typename T>
 class DataBaseCollection
 {
@@ -114,5 +114,5 @@ void DataBaseCollection<T>::RemoveAll()
 	nameItemMap.clear();
 }
 
-
+*/
 #endif // DATABASECOLLECTION_H

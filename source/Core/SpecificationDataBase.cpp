@@ -5,6 +5,7 @@
 #include "source/Models/Specifications/StringSpecificationModel.h"
 #include "source/Models/Specifications/EnumerationSpecificationModel.h"
 
+/*
 const QString SpecificationDataBase::DEFAULT_TYPE = "DEFAULT_TYPE";
 const QString SpecificationDataBase::CUSTOM_TYPE = "CUSTOM_TYPE";
 
@@ -25,3 +26,4 @@ void SpecificationDataBase::RegisterDefaultSpecifications()
 	RegisterDefaultType<StringSpecificationModel>();
 	RegisterDefaultType<EnumerationSpecificationModel>();
 }
+*/
